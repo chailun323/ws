@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    @keyframes c1{
+      0%{width: 100%}
+      25%{width: 75%}
+      50%{width: 50%}
+      75%{width: 25%}
+      100%{width: 0}
+    }
+  #c1{
+    //border:1px solid red;
+  }
+  #poem{
+    width: 337px;
+    height:376px;
+    position: relative; 
+    top:-631px;
+    background: url("poem.png") no-repeat;
+   // animation: c1 3s infinite;
+  
+  }
+ .mask{
+  width: 100%;
+  height:100%;
+  position: absolute; 
+  left:10px;
+  //border:1px solid red;
+  background: url("mask.png") no-repeat;
+  animation: c1 3s infinite;
+ }
+  </style>
+</head>
+<body>
+  <canvas id="c1" >请换浏览器</canvas>
+<div id="poem">
+  <div class="mask"></div>
+</div>
+
+  <script>
+  let can=document.getElementById("c1");
+  let ctx=can.getContext("2d");
+can.width=1162;
+can.height=764;
+
+  let img=new Image();
+  console.log(img)
+  img.src="c1.png";
+  img.onload=()=>{
+    ctx.drawImage(img,0,0);
+  }
+  </script>
+</body>
+</html>
